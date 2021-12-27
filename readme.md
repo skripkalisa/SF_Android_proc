@@ -2,24 +2,30 @@
 
 # Профессия Android-разработчик
 
-### Раздел "Варианты построения архитектур мобильных приложений"
+### Раздел "Многопоточность, реактивные подходы к построению приложения, работа в фоне"
 
 ## Содержание
 
-- [Module 32. Архитектура UI слоя приложения. View Binding, Data Binding](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod32/FilmSearch)
+- [Module 41. Реактивность, многопоточность с LiveData](https://github.com/skripkalisa/SF_Android_proc/tree/Mod41/FilmSearch)
 
-- [Module 33. Модуль 33. Паттерны UI слоя ](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod33/FilmSearch)
+- [Module 42. Реактивность, многопоточность с Coroutines Pt1](https://github.com/skripkalisa/SF_Android_proc/tree/Mod42/FilmSearch)
 
-- [Module 34. Введение в работу с сетью ](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod34/FilmSearch)
+- [Module 43. Реактивность, многопоточность с Coroutines Pt2](https://github.com/skripkalisa/SF_Android_proc/tree/Mod43/FilmSearch)
 
-- [Module 35. Retrofit, GSON и картинки ](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod35/FilmSearch)
+- [Module 44. Реактивность, многопоточность с RxJava 41](https://github.com/skripkalisa/SF_Android_proc/tree/Mod44/FilmSearch)
 
-- [Module 36. DI: основные концепции и сравнение библиотек](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod36/FilmSearch)
+- [Module 45. Реактивность, многопоточность RxJava Ч2](https://github.com/skripkalisa/SF_Android_proc/tree/Mod45/FilmSearch)
 
-- [Module 37. Dagger 2](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod37/FilmSearch)
+- [Module 46 Архитектура слоя модели, модуляризация.](https://github.com/skripkalisa/SF_Android_proc/tree/Mod46/FilmSearch)
 
-- [Module 38. Android Persistence - Shared Preferences, работа с файлами](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod38/FilmSearch)
+### Больше о работе в фоне
 
-- [Module 39. Android Persistence - Реляционные БД](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod39/FilmSearch)
+- [Module 47. Service](https://github.com/skripkalisa/SF_Android_proc/tree/Mod47/FilmSearch)
 
-- [Module 40. Android Persistence Pt3, Room](https://github.com/skripkalisa/SF_Android_AAV/tree/Mod40/FilmSearch)
+- [Module 48. Notification](https://github.com/skripkalisa/SF_Android_proc/tree/Mod48/FilmSearch)
+
+- [Module 49. Планирование(scheduling) и Ко (оптимизация работы в фоне)](https://github.com/skripkalisa/SF_Android_proc/tree/Mod49/FilmSearch)
+
+- [Module 50. Widget's](https://github.com/skripkalisa/SF_Android_proc/tree/Mod50/FilmSearch)
+
+- [Module 51. Firebase: Push-сообщения. Storage](https://github.com/skripkalisa/SF_Android_proc/tree/Mod51/FilmSearch)
