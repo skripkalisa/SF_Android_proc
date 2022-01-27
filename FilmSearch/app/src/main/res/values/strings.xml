@@ -13,11 +13,16 @@
     <string name="home">Home</string>
     <string name="settings">Settings</string>
 
-    <string name="menu_settings_title_text">Настройки</string>
+    <string name="menu_settings_title_text">Settings</string>
     <string name="radio_button_popular">Popular</string>
     <string name="radio_button_top_rated">Top</string>
     <string name="radio_button_upcoming">Soon</string>
     <string name="radio_button_playing">In theaters</string>
     <string name="radio_group_header">Home page collection:</string>
+
+    <string name="permission_storage">Action is not permitted. Please grant required permissions</string>
+    <string name="downloaded_to_gallery">"Saved to Gallery"</string>
+    <string name="open">Open Gallery</string>
+    <string name="floatingactionbutton">FloatingActionButton</string>
 
 </resources>

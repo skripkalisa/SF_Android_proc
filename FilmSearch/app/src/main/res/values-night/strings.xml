@@ -2,4 +2,5 @@
 <resources>
     <string name="menu_selections_title">Collections</string>
     <string name="image">Image</string>
+    <string name="floatingactionbutton">FloatingActionButton</string>
 </resources>
