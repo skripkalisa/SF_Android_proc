@@ -1,5 +1,6 @@
 package com.example.filmsearch.domain
 
+import androidx.lifecycle.LiveData
 import com.example.filmsearch.data.API
 import com.example.filmsearch.data.MainRepository
 import com.example.filmsearch.data.PreferenceProvider
@@ -33,16 +34,10 @@ class Interactor(
                     list.forEach {
                         repo.putToDb(list)
                     }
-                    callback.onSuccess(list)
-
-                    callback.onSharedPreferenceChanged(Converter.convertApiListToDtoList(response.body()?.tmdbFilms))
+                    callback.onSuccess()
 
                 }
-//                override fun onsharedPreferenceChanged(
-//                    call: Call<TmdbResultsDto>,
-//                    response: Response<TmdbResultsDto>
-//                ) {
-//                }
+
 
                 override fun onFailure(call: Call<TmdbResultsDto>, t: Throwable) {
                     //В случае провала вызываем другой метод коллбека
@@ -50,7 +45,7 @@ class Interactor(
                 }
             })
     }
-    fun getFilmsFromDB(): List<Film> = repo.getAllFromDB()
+    fun getFilmsFromDB(): LiveData<List<Film>> = repo.getAllFromDB()
     //Метод для сохранения настроек
     fun saveDefaultCategoryToPreferences(category: String) {
         preferences.saveDefaultCategory(category)

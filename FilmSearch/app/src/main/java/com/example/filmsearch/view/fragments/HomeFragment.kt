@@ -11,15 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.filmsearch.view.MainActivity
 import com.example.filmsearch.R
-import com.example.filmsearch.databinding.FragmentHomeBinding
 import com.example.filmsearch.data.entity.Film
+import com.example.filmsearch.databinding.FragmentHomeBinding
 import com.example.filmsearch.utils.AnimationHelper
+import com.example.filmsearch.view.MainActivity
 import com.example.filmsearch.view.rv_adapters.FilmListRecyclerAdapter
 import com.example.filmsearch.view.rv_adapters.TopSpacingItemDecoration
 import com.example.filmsearch.viewmodel.HomeFragmentViewModel
@@ -52,7 +53,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -66,11 +67,14 @@ class HomeFragment : Fragment() {
         )
 
         //Кладем нашу БД в RV
-        viewModel.filmsListLiveData.observe(viewLifecycleOwner, {
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner) {
             filmsDataBase = it
             filmsAdapter.addItems(it)
-        })
-//        filmsAdapter.addItems(filmsDataBase)
+        }
+        viewModel.showProgressBar.observe(viewLifecycleOwner) {
+            binding.progressBar.isVisible = it
+        }
+
         sceneTransition(binding.homeFragmentRoot)
 
         initSearchView(view)
@@ -79,17 +83,17 @@ class HomeFragment : Fragment() {
         initPullToRefresh()
     }
 
-private fun initPullToRefresh() {
-   //Вешаем слушатель, чтобы вызвался pull to refresh
-   binding.pullToRefresh.setOnRefreshListener {
-       //Чистим адаптер(items нужно будет сделать паблик или создать для этого публичный метод)
-       filmsAdapter.items.clear()
-       //Делаем новый запрос фильмов на сервер
-       viewModel.getFilms()
-       //Убираем крутящееся колечко
-       binding.pullToRefresh.isRefreshing = false
-   }
-}
+    private fun initPullToRefresh() {
+        //Вешаем слушатель, чтобы вызвался pull to refresh
+        binding.pullToRefresh.setOnRefreshListener {
+            //Чистим адаптер(items нужно будет сделать паблик или создать для этого публичный метод)
+            filmsAdapter.items.clear()
+            //Делаем новый запрос фильмов на сервер
+            viewModel.getFilms()
+            //Убираем крутящееся колечко
+            binding.pullToRefresh.isRefreshing = false
+        }
+    }
 
 
     private fun initRecycler(view: View) {
