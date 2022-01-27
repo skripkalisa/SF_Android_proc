@@ -67,13 +67,13 @@ class HomeFragment : Fragment() {
         )
 
         //Кладем нашу БД в RV
-        viewModel.filmsListLiveData.observe(viewLifecycleOwner, {
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner) {
             filmsDataBase = it
             filmsAdapter.addItems(it)
-        })
-        viewModel.showProgressBar.observe(viewLifecycleOwner, {
+        }
+        viewModel.showProgressBar.observe(viewLifecycleOwner) {
             binding.progressBar.isVisible = it
-        })
+        }
 
         sceneTransition(binding.homeFragmentRoot)
 
